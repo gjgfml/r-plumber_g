@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    container_name: api
+    volumes:
+      - ./:/app
+    environment:
+      - PORT=${PORT:-8000}
+      - HOST=${HOST:-0.0.0.0}
+    ports:
+      - "8000:8000"
